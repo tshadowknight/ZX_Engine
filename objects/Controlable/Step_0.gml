@@ -16,22 +16,25 @@ if(stateUpdate != ""){
 var height = bbox_bottom - bbox_top;
 var width = bbox_right - bbox_left;
 
+topright = position_meeting(x + width/2 + 1, y - height/2, obj_solid_block);
+topleft = position_meeting(x - width/2 - 1, y - height/2, obj_solid_block);
+
 bottom = position_meeting(x, y + height/2 + 1, obj_solid_block);
 bottomright = position_meeting(x + width/2, y + height/2 + 1, obj_solid_block);
 bottomleft = position_meeting(x - width/2, y + height/2 + 1, obj_solid_block);
 
 if(state == "cling_left"){
-	if(key_left == 0){
+	if(key_left == 0 || !topleft){
 		if(cling_cooldown <= 0){
 			state = "fall";
 		}		
 		cling_cooldown--;
-	}	
+	}		
 }
 
 if(state == "cling_right"){
-	if(key_right == 0){
-		if(cling_cooldown <= 0){
+	if(key_right == 0 || !topright){
+		if(cling_cooldown <= 0 ){
 			state = "fall";
 		}		
 		cling_cooldown--;
