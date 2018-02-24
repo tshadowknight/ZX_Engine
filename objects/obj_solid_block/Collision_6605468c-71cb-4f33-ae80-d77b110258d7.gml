@@ -30,15 +30,20 @@ debug_msg+="bottomleft: "+string(bottomleft)+", ";
 
 show_debug_message(debug_msg);
 
+obj_block_solid__BottomRight();
+obj_block_solid__BottomLeft();
+obj_block_solid__TopRight();
+obj_block_solid__TopLeft();
+
 if(bottom || bottomright || bottomleft){
 	other.stateUpdate = "stand";
 	other.surface_update = "regular";
 } 
 
-obj_block_solid__BottomRight();
-obj_block_solid__BottomLeft();
-obj_block_solid__TopRight();
-obj_block_solid__TopLeft();
+if(topleft && left && !bottom){
+	other.stateUpdate = "cling_left";
+	other.surface_update = "regular";
+}
 
 
 
