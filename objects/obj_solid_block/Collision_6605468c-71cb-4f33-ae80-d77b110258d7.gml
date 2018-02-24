@@ -40,9 +40,16 @@ if(bottom || bottomright || bottomleft){
 	other.surface_update = "regular";
 } 
 
-if(topleft && left && !bottom){
+if(bottomleft && left && !bottom){
 	other.stateUpdate = "cling_left";
 	other.surface_update = "regular";
+	other.cling_cooldown = 5;
+}
+
+if(bottomright && right && !bottom){
+	other.stateUpdate = "cling_right";
+	other.surface_update = "regular";
+	other.cling_cooldown = 5;
 }
 
 
