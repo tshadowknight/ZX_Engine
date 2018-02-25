@@ -35,23 +35,13 @@ obj_block_solid__BottomLeft();
 obj_block_solid__TopRight();
 obj_block_solid__TopLeft();
 
-if(bottom || bottomright || bottomleft){
-	other.stateUpdate = "stand";
-	other.surface_update = "regular";
-} 
-
-if(bottomleft && left && !bottom){
-	other.stateUpdate = "cling_left";
-	other.surface_update = "regular";
-	other.cling_cooldown = 5;
+if(!bottomleft && !topleft && left){
+	eject_horizontal(self, other, -1);
 }
 
-if(bottomright && right && !bottom){
-	other.stateUpdate = "cling_right";
-	other.surface_update = "regular";
-	other.cling_cooldown = 5;
+if(!bottomright && !topright && right){
+	eject_horizontal(self, other, 1);
 }
-
 
 
 
