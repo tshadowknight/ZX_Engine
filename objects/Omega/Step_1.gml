@@ -1,5 +1,7 @@
-/// @description Animation
+/// @description Insert description here
 // You can write your code in this editor
+
+// Inherit the parent event
 switch(state){
 	case("stand"):
 		var target_moving_sprite = omega_walk;
@@ -53,4 +55,6 @@ switch(state){
 		}
 	break;
 }
+
+event_inherited();
 

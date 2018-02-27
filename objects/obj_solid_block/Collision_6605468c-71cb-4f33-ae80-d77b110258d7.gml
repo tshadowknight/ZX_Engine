@@ -30,13 +30,15 @@ debug_msg+="bottomleft: "+string(bottomleft)+", ";
 
 show_debug_message(debug_msg);
 
-if(sign(other.horz_speed) == 1){
+
+if((other.horz_speed) == 1){
 	obj_block_solid__BottomRight();
 	obj_block_solid__BottomLeft();
 } else {
 	obj_block_solid__BottomLeft();
 	obj_block_solid__BottomRight();	
 }
+
 
 obj_block_solid__TopRight();
 obj_block_solid__TopLeft();

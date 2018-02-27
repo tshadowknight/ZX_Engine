@@ -22,11 +22,6 @@ if(stateUpdate != ""){
 
 
 
-//update standing surface
-if(surface_update != ""){
-	current_surface = surface_update;
-	surface_update = "";
-}
 
 //update object properties
 
@@ -44,6 +39,7 @@ if(state == "stand"){
 	}	
 	
 	if(key_jump != 0){		
+		current_surface = "none";
 		if(key_down && current_surface == "one_way"){
 			stateUpdate = "fall";
 			y+=2;
@@ -58,6 +54,7 @@ if(state == "stand"){
 		dashing_counter = dash_duration;
 	}
 	if(key_jump != 0){
+		current_surface = "none";
 		vert_speed = -jump_speed;
 		horz_cooldown = 5;
 		if(state == "cling_left"){
@@ -67,6 +64,7 @@ if(state == "stand"){
 		}
 		stored_horz_speed = actual_move_speed;
 		stateUpdate = "jump";
+		
 		if(dashing_counter > 0){
 			air_speed = move_speed * dash_multiplier;
 		} else {
@@ -78,16 +76,13 @@ if(state == "stand"){
 	} else {
 		vert_speed -= cling_friction;	
 	}
-} else if(state == "fall" || state == "jump"){
+} else if(state == "fall" || state == "jump"){	
 	dashing_counter = 0;
 	actual_move_speed = air_speed;
-	
 	if(vert_speed < 10){
 		vert_speed += grav;	
 	}	
 }  
-
-
 
 horz_delta = key_left + key_right;
 horz_speed = horz_delta * actual_move_speed;

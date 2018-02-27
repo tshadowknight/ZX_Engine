@@ -1,3 +1,5 @@
+/// @description Insert description here
+// You can write your code in this editor
 /// @description Collision with Moveable
 // You can write your code in this editor
 moveable_vert_sign = sign(other.vert_speed);
@@ -17,9 +19,8 @@ bottomright = collisions[6];
 bottomleft = collisions[7];
 
 
-while(place_meeting(self.x, self.y, other)){
+while(position_meeting(other.x, other.bbox_bottom, self)){
 	other.y -= 1
 }	
 
-other.stateUpdate = "stand";
-other.surface_update = "slope";
+other.current_surface = "slope";

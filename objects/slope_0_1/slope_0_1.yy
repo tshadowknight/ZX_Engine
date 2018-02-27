@@ -1,23 +1,14 @@
 {
-    "id": "7c7a7ff6-9ec5-4b69-ba30-b388e71d0a3e",
+    "id": "ac9070d7-b73b-4f53-a09c-786567c4f90c",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "Omega",
+    "name": "slope_0_1",
     "eventList": [
-        {
-            "id": "d8a33f26-b07d-4df1-bd6b-6ec9145a2259",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 1,
-            "eventtype": 3,
-            "m_owner": "7c7a7ff6-9ec5-4b69-ba30-b388e71d0a3e"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "e36a76f5-0b66-4866-92ad-8882ee6724f9",
+    "parentObjectId": "74057f21-6a70-435a-a011-a5d79fc99173",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -33,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "7e7c405e-8256-4e0f-b99f-e1a871462460",
+    "spriteId": "d1409139-ec31-48dc-88b0-bed0b1ae5549",
     "visible": true
 }
