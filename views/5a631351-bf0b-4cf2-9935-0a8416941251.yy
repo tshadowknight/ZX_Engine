@@ -10,7 +10,7 @@
         "b801f818-2bf3-449d-9d30-bdd7d32c69a1"
     ],
     "filterType": "GMObject",
-    "folderName": "Type 1",
+    "folderName": "Type 0",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

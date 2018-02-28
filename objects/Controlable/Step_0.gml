@@ -20,9 +20,6 @@ if(stateUpdate != ""){
 	stateUpdate = "";
 }
 
-
-
-
 //update object properties
 
 var actual_move_speed = move_speed;
@@ -39,14 +36,16 @@ if(state == "stand"){
 	}	
 	
 	if(key_jump != 0){		
-		current_surface = "none";
+		
 		if(key_down && current_surface == "one_way"){
-			stateUpdate = "fall";
+			state = "fall";
 			y+=2;
 		} else {
 			vert_speed = -jump_speed;	
-			stateUpdate = "jump";			
-		}		
+			state = "jump";					
+			y-=3; //make sure the player clears slopes on the first frame of jumping
+		}	
+		current_surface = "none";
 	}	
 	air_speed = actual_move_speed;
 } else if(state == "cling_left" || state == "cling_right"){
@@ -63,7 +62,7 @@ if(state == "stand"){
 			actual_move_speed = -wall_jump_push;
 		}
 		stored_horz_speed = actual_move_speed;
-		stateUpdate = "jump";
+		state = "jump";
 		
 		if(dashing_counter > 0){
 			air_speed = move_speed * dash_multiplier;
