@@ -46,6 +46,9 @@ if(state == "stand"){
 			y-=3; //make sure the player clears slopes on the first frame of jumping
 		}	
 		current_surface = "none";
+		current_surface_left = "none";
+		current_surface_right = "none";
+		slope_cooldown = 2; //ignore slopes for 2 frames to avoid getting stuck on them after a jump
 	}	
 	air_speed = actual_move_speed;
 } else if(state == "cling_left" || state == "cling_right"){
@@ -54,6 +57,9 @@ if(state == "stand"){
 	}
 	if(key_jump != 0){
 		current_surface = "none";
+		current_surface_left = "none";
+		current_surface_right = "none";
+		slope_cooldown = 2; //ignore slopes for 2 frames to avoid getting stuck on them after a jump
 		vert_speed = -jump_speed;
 		horz_cooldown = 5;
 		if(state == "cling_left"){

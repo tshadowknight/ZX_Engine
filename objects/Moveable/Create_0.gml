@@ -23,3 +23,5 @@ stored_horz_speed = 0;
 vert_cooldown = 0;
 stored_vert_speed = 0;
 cling_cooldown = 0;
+
+slope_cooldown  = 0;
