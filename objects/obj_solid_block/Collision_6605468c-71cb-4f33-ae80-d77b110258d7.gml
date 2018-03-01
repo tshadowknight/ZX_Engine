@@ -51,7 +51,17 @@ if(!bottomright && !topright && right){
 	eject_horizontal(self, other, 1);
 }
 
+if(bottomleft && !left){
+	other.state = "stand";
+}
 
+if(bottomright && !right){
+	other.state = "stand";
+}
+
+if(bottom){
+	other.state = "stand";
+}
 
 
 

@@ -159,11 +159,35 @@
             }
         },
         {
+            "Key": "367f5e95-ccc2-4a74-9b62-795458bc4ff5",
+            "Value": {
+                "id": "4a205e0b-e793-48c9-a9c2-c57dd8d62e5a",
+                "resourcePath": "views\\367f5e95-ccc2-4a74-9b62-795458bc4ff5.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4415ff76-889d-4e00-bd58-30c43ec4c135",
+            "Value": {
+                "id": "941f757f-3c7a-4425-8dd5-d5371a4f17a3",
+                "resourcePath": "sprites\\ladder_top_pink\\ladder_top_pink.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "44475a3b-091a-4743-8ce3-631b88ad3099",
             "Value": {
                 "id": "f7da2045-019e-492c-9bed-9b74dea2d53d",
                 "resourcePath": "views\\44475a3b-091a-4743-8ce3-631b88ad3099.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4933188a-3cd5-47ea-a387-039f55694348",
+            "Value": {
+                "id": "d9a2a7be-810c-4340-96c9-762a4b943b07",
+                "resourcePath": "objects\\ladder_top\\ladder_top.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -463,6 +487,14 @@
             }
         },
         {
+            "Key": "c3aef681-3cb6-4d1e-a58b-68e6b18e8c71",
+            "Value": {
+                "id": "21f7bfc0-2983-42f3-9382-e67608eb9d36",
+                "resourcePath": "objects\\ladder\\ladder.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "10178833-45ad-4e27-bec3-db081c8ee43e",
@@ -540,6 +572,14 @@
                 "id": "8d14ef20-5db2-43d7-98be-f16725bcdf97",
                 "resourcePath": "objects\\slope_1_1\\slope_1_1.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e8669e17-4f76-4449-955a-80f6ff6c7b6a",
+            "Value": {
+                "id": "4c65aa10-98c0-4ab4-a5e2-c262b3d54bf6",
+                "resourcePath": "sprites\\ladder_pink\\ladder_pink.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

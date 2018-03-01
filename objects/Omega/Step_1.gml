@@ -3,6 +3,9 @@
 
 // Inherit the parent event
 switch(state){
+	case("ladder"):
+		sprite_index = omega_idle;
+	break;
 	case("stand"):
 		var target_moving_sprite = omega_walk;
 		if(dashing_counter > 0){

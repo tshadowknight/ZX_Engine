@@ -24,16 +24,41 @@ if(stateUpdate != ""){
 
 var actual_move_speed = move_speed;
 
-if(state == "stand"){
+
+if(state == "ladder"){
+	dashing_counter = 0;
+	key_left = 0;
+	key_right = 0;
+	vert_speed = 0;
+	if(key_up != 0){
+		vert_speed = -ladder_speed;
+	}
+	if(key_down != 0){
+		vert_speed = ladder_speed;
+	}
+	if(key_jump != 0){
+		state = "fall";
+	}
+} else if(state == "stand"){
 	vert_speed = 0;
 	actual_move_speed = move_speed;
 	if(key_dash){
 		dashing_counter = dash_duration;
+		
 	}
 	if(dashing_counter > 0){
+		if(key_left == 0 && key_right ==0){
+			if(facing == -1){
+				key_left = -1;
+			} else {
+				key_right = 1;
+			}
+		}
 		dashing_counter--;
 		actual_move_speed = actual_move_speed * dash_multiplier;
 	}	
+	
+	
 	
 	if(key_jump != 0){		
 		

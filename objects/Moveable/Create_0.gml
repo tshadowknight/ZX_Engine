@@ -25,3 +25,8 @@ stored_vert_speed = 0;
 cling_cooldown = 0;
 
 slope_cooldown  = 0;
+
+ladder_available = 0;
+ladder_speed = 4.5;
+
+state_cooldown = 0;
