@@ -25,8 +25,10 @@ stored_vert_speed = 0;
 cling_cooldown = 0;
 
 slope_cooldown  = 0;
+ignore_current_slope = false;
 
 ladder_available = 0;
 ladder_speed = 4.5;
 
 state_cooldown = 0;
+force_h_align = false;

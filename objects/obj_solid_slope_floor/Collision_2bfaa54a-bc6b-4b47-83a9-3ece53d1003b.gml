@@ -21,4 +21,5 @@ bottomleft = collisions[7];
 
 while(position_meeting(other.x, other.bbox_bottom, self)){
 	other.y -= 1
+	other.state = "stand";
 }	

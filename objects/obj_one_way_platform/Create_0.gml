@@ -5,5 +5,4 @@
 event_inherited();
 
 clingeable = false;
-regular_standing = false;
-surface = "one_way"
+is_one_way = true;

@@ -1,6 +1,22 @@
 /// @description Falling State Handler
 // You can write your code in this editor
-var force_h_align = false;
+
+if(state != "jump"){
+	if(force_h_align){
+		var displacement = 0;
+		standing_on = instance_position(x, bbox_bottom+1+displacement, obj_solid_block);	
+		while(standing_on == noone){
+			displacement++;
+			standing_on = instance_position(x, bbox_bottom+1+displacement, obj_solid_block);			
+		}
+		if(displacement < 32){
+			y+=displacement;
+		}
+		current_surface = standing_on.surface;		
+		state = "stand";	
+	} 
+}
+force_h_align = false;
 //Check inputs
 key_right = gamepad_button_check(0, gp_padr);
 key_left = -gamepad_button_check(0, gp_padl);
@@ -17,20 +33,65 @@ bottom = position_meeting(x, bbox_bottom + 1, obj_solid_block) || position_meeti
 bottomright = position_meeting(bbox_right, bbox_bottom + 1, obj_solid_block) || position_meeting(bbox_right, bbox_bottom + 1, ladder_top);
 bottomleft = position_meeting(bbox_left, bbox_bottom + 1, obj_solid_block) || position_meeting(bbox_left, bbox_bottom + 1, ladder_top);
 
-//Standing surface detection
+//Standing surface and slope detection
+
+
+current_surface = "";
+on_slope = false;
+on_one_way = false;
+
+current_surface_left = "";
+on_slope_left = false;
+on_one_way_left = false;
+
+current_surface_right = "";
+on_slope_right = false;
+on_one_way_right = false;
+
+touching_slope_left = false;
+touching_slope_right = false;
+
+
 var standing_on = instance_position(x, bbox_bottom+1, obj_solid_block);
 if(standing_on != noone){
 	current_surface = standing_on.surface;	
+	if(sign(vert_speed) != -1){
+		on_slope = standing_on.is_slope;
+		on_one_way = standing_on.is_one_way;
+	}	
 }
 
 var standing_on_left = instance_position(bbox_left, bbox_bottom+1, obj_solid_block);
 if(standing_on_left != noone){
-	current_surface_left = standing_on_left.surface;	
+	current_surface_left = standing_on_left.surface;
+	on_slope_left = standing_on_left.is_slope;
+	on_one_way_left = standing_on_left.is_one_way;
 }
 
 var standing_on_right = instance_position(bbox_right, bbox_bottom+1, obj_solid_block);
 if(standing_on_right != noone){
 	current_surface_right = standing_on_right.surface;	
+	on_slope_right = standing_on_right.is_slope;
+	on_one_way_right = standing_on_right.is_one_way;
+}
+
+var touching_right = instance_position(bbox_right+1, y, obj_solid_block);
+if(touching_right != noone){
+	touching_slope_right = touching_right.is_slope;
+}
+
+var touching_left = instance_position(bbox_left+1, y, obj_solid_block);
+if(touching_left != noone){
+	touching_slope_left = touching_left.is_slope;
+}
+
+if(ignore_current_slope){
+	if(!on_slope && !on_slope_left && !on_slope_right){
+		ignore_current_slope = false;
+	}
+	on_slope = false;
+	on_slope_left = false;
+	on_slope_right = false;
 }
 
 //Ladder detection
@@ -107,25 +168,21 @@ if(state == "cling_right"){
 
 //Slope alignment
 //when in contact with a slope on any bottom point the player should be forcefully aligned to the ground
-if(slope_cooldown <= 0 && (current_surface == "slope" || current_surface_left == "slope" || current_surface_right == "slope")){
+if(slope_cooldown <= 0 && vert_speed >= 0 && (on_slope || on_slope_left || on_slope_right) && state == "stand"){
 	force_h_align = true;
 } 
 
-if(force_h_align){
-	while(standing_on == noone){
-		y++;
-		standing_on = instance_position(x, bbox_bottom+1, obj_solid_block);			
-	}
-	current_surface = standing_on.surface;		
-	state = "stand";	
-}
-slope_cooldown--;
 
 //Fall state detection
 if(!bottom && !bottomright && !bottomleft && state != "cling_left" && state != "cling_right" && state != "ladder"){
-	if(sign(vert_speed) >= 0 ){ 
-		if(current_surface != "slope"){
-			state = "fall";
-		} 	
+	if(sign(vert_speed) >= 0 ){ 		
+		state = "fall";		
 	}	
 }
+
+
+if(slope_cooldown >= 0){
+	slope_cooldown--;
+}
+
+

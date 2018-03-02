@@ -62,17 +62,19 @@ if(state == "ladder"){
 	
 	if(key_jump != 0){		
 		
-		if(key_down && current_surface == "one_way"){
+		if(key_down && on_one_way){
 			state = "fall";
-			y+=2;
+			y+=4;
+			ignore_current_slope = true;
+			force_h_align = false;
 		} else {
 			vert_speed = -jump_speed;	
 			state = "jump";					
 			y-=3; //make sure the player clears slopes on the first frame of jumping
 		}	
-		current_surface = "none";
-		current_surface_left = "none";
-		current_surface_right = "none";
+		on_slope = false;
+		on_slope_left = false;
+		on_slope_right = false;
 		slope_cooldown = 2; //ignore slopes for 2 frames to avoid getting stuck on them after a jump
 	}	
 	air_speed = actual_move_speed;
@@ -81,9 +83,9 @@ if(state == "ladder"){
 		dashing_counter = dash_duration;
 	}
 	if(key_jump != 0){
-		current_surface = "none";
-		current_surface_left = "none";
-		current_surface_right = "none";
+		on_slope = false;
+		on_slope_left = false;
+		on_slope_right = false;
 		slope_cooldown = 2; //ignore slopes for 2 frames to avoid getting stuck on them after a jump
 		vert_speed = -jump_speed;
 		horz_cooldown = 5;
