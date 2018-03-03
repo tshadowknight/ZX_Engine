@@ -35,6 +35,7 @@ bottomleft = position_meeting(bbox_left, bbox_bottom + 1, obj_solid_block) || po
 
 //Standing surface and slope detection
 
+in_water = false;
 
 current_surface = "";
 on_slope = false;
@@ -50,6 +51,9 @@ on_one_way_right = false;
 
 touching_slope_left = false;
 touching_slope_right = false;
+
+touching_slope_top_left = false;
+touching_slope_top_right = false;
 
 
 var standing_on = instance_position(x, bbox_bottom+1, obj_solid_block);
@@ -85,6 +89,7 @@ if(touching_left != noone){
 	touching_slope_left = touching_left.is_slope;
 }
 
+
 if(ignore_current_slope){
 	if(!on_slope && !on_slope_left && !on_slope_right){
 		ignore_current_slope = false;
@@ -92,6 +97,37 @@ if(ignore_current_slope){
 	on_slope = false;
 	on_slope_left = false;
 	on_slope_right = false;
+}
+
+interaction_points = ds_map_create();
+interaction_points[? "bottom"] = [x, bbox_bottom];
+interaction_points[? "top"] = [x, bbox_top];
+interaction_points[? "left"] = [bbox_left, y];
+interaction_points[? "right"] = [bbox_right, y];
+interaction_points[? "bottomleft"] = [bbox_left, bbox_bottom];
+interaction_points[? "bottomright"] = [bbox_right, bbox_bottom];
+interaction_points[? "topleft"] = [bbox_left, bbox_top];
+interaction_points[? "topright"] = [bbox_right, bbox_top];
+
+current_interaction_points = ds_map_create();
+current_interactions = ds_map_create();
+
+var size, key, i;
+size = ds_map_size(interaction_points);
+key = ds_map_find_first(interaction_points);
+for (i = 0; i < size; i++;){
+	var check_pos = interaction_points[? key];
+	current_interactable = instance_position(check_pos[0], check_pos[1], interactable);
+	if(current_interactable != noone){
+		current_interaction_points[? key] = current_interactable.type;
+		current_interactions[? current_interactable.type] = true;
+	}
+	key = ds_map_find_next(interaction_points, key);
+}
+
+in_water = current_interactions[? "water"];
+if(current_interactions[? "death"]){
+	is_dead = true;
 }
 
 //Ladder detection

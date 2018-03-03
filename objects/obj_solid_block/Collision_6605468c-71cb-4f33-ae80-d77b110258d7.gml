@@ -51,15 +51,15 @@ if(!bottomright && !topright && right){
 	eject_horizontal(self, other, 1);
 }
 
-if(bottomleft && !left){
+if(bottomleft && !left && other.vert_speed >= 0){
 	other.state = "stand";
 }
 
-if(bottomright && !right){
+if(bottomright && !right && other.vert_speed >= 0){
 	other.state = "stand";
 }
 
-if(bottom){
+if(bottom && other.vert_speed >= 0){
 	other.state = "stand";
 }
 

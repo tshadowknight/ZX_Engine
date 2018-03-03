@@ -1,5 +1,9 @@
 /// @description Input handler
 //poll input
+if(is_dead){
+	return;
+}
+
 key_right = gamepad_button_check(0, gp_padr);
 key_left = -gamepad_button_check(0, gp_padl);
 key_up = gamepad_button_check(0, gp_padu);
@@ -24,7 +28,6 @@ if(stateUpdate != ""){
 
 var actual_move_speed = move_speed;
 
-
 if(state == "ladder"){
 	dashing_counter = 0;
 	key_left = 0;
@@ -43,8 +46,7 @@ if(state == "ladder"){
 	vert_speed = 0;
 	actual_move_speed = move_speed;
 	if(key_dash){
-		dashing_counter = dash_duration;
-		
+		dashing_counter = dash_duration;		
 	}
 	if(dashing_counter > 0){
 		if(key_left == 0 && key_right ==0){
@@ -56,19 +58,19 @@ if(state == "ladder"){
 		}
 		dashing_counter--;
 		actual_move_speed = actual_move_speed * dash_multiplier;
-	}	
-	
-	
-	
-	if(key_jump != 0){		
-		
+	}			
+	if(key_jump != 0){				
 		if(key_down && on_one_way){
 			state = "fall";
 			y+=4;
 			ignore_current_slope = true;
 			force_h_align = false;
 		} else {
-			vert_speed = -jump_speed;	
+			new_speed = -jump_speed;
+			if(in_water){
+				new_speed*=water_jump_multiplier;
+			}
+			vert_speed = new_speed;
 			state = "jump";					
 			y-=3; //make sure the player clears slopes on the first frame of jumping
 		}	
@@ -87,7 +89,12 @@ if(state == "ladder"){
 		on_slope_left = false;
 		on_slope_right = false;
 		slope_cooldown = 2; //ignore slopes for 2 frames to avoid getting stuck on them after a jump
-		vert_speed = -jump_speed;
+		new_speed = -jump_speed;
+		if(in_water){
+			new_speed*=water_jump_multiplier;
+		}
+		vert_speed = new_speed;
+		
 		horz_cooldown = 5;
 		if(state == "cling_left"){
 			actual_move_speed = wall_jump_push;
@@ -116,8 +123,14 @@ if(state == "ladder"){
 	}	
 }  
 
+
+
 horz_delta = key_left + key_right;
 horz_speed = horz_delta * actual_move_speed;
+
+if(in_water){
+	horz_speed*=water_h_multiplier;
+}
 
 if(horz_cooldown > 0){
 	horz_cooldown--;
