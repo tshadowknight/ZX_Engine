@@ -6,3 +6,4 @@ event_inherited();
 
 clingeable = false;
 surface = "ladder";
+is_ladder = true;

@@ -38,14 +38,21 @@ if(is_dead){
 	return;
 }
 // Inherit the parent event
+current_animation_set = regular_animations;
+if(attack_state == "firing"){
+	current_animation_set = firing_animations;
+}
 switch(state){
 	case("ladder"):
-		sprite_index = omega_idle;
+		sprite_index = current_animation_set[? "idle"];
+		shooting_anim_last_context = "idle";
 	break;
 	case("stand"):
-		var target_moving_sprite = omega_walk;
+		var target_moving_sprite = current_animation_set[? "walk"];
+		shooting_anim_last_context = "walk";
 		if(dashing_counter > 0){
-			target_moving_sprite = omega_dash;
+			target_moving_sprite = current_animation_set[? "dash"];
+			shooting_anim_last_context = "dash";
 		}
 		if(key_left != 0){		
 			sprite_index = target_moving_sprite;							
@@ -54,21 +61,23 @@ switch(state){
 			sprite_index = target_moving_sprite;						
 			image_xscale = 1;
 		} else {
-			sprite_index = omega_idle;
+			sprite_index = current_animation_set[? "idle"];
+			shooting_anim_last_context = "idle";
 		}		
 	break;
 	case("jump"):		
-		if(sprite_index != omega_jump){
+		shooting_anim_last_context = "air";
+		if(sprite_index != current_animation_set[? "jump"]){
 			animation_state = "jump_start";
 		}
 		if(animation_state == "jump_loop" && floor(image_index) == 0){
 			image_index = 3;
 		}
 		if(facing == -1){
-			sprite_index = omega_jump;	
+			sprite_index = current_animation_set[? "jump"];	
 			image_xscale = -1;
 		} else {
-			sprite_index = omega_jump;	
+			sprite_index = current_animation_set[? "jump"];	
 			image_xscale = 1;
 		}		
 		if(image_index >= 3){
@@ -76,17 +85,18 @@ switch(state){
 		}
 	break;	
 	case("fall"):		
-		if(sprite_index != omega_fall){
+		shooting_anim_last_context = "air";
+		if(sprite_index != current_animation_set[? "fall"]){
 			animation_state = "fall_start";
 		}
 		if(animation_state == "fall_loop" && floor(image_index) == 0){
 			image_index = 1;
 		}
 		if(facing == -1){
-			sprite_index = omega_fall;	
+			sprite_index = current_animation_set[? "fall"];	
 			image_xscale = -1;
 		} else {
-			sprite_index = omega_fall;	
+			sprite_index = current_animation_set[? "fall"];	
 			image_xscale = 1;
 		}		
 		if(image_index >= 1){

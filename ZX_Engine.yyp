@@ -127,11 +127,27 @@
             }
         },
         {
+            "Key": "1b4a3647-33b4-4fb6-9d2b-e4553becc117",
+            "Value": {
+                "id": "13ff35e4-0d33-4021-aa3a-e131b94b0d7a",
+                "resourcePath": "objects\\shot_medium\\shot_medium.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1cd2810e-1e5e-4380-8058-14528548cccc",
             "Value": {
                 "id": "c5e28fb7-20c0-4f87-ba1b-90affd0295df",
                 "resourcePath": "views\\1cd2810e-1e5e-4380-8058-14528548cccc.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2037b29d-3213-4219-8a89-fee9002dfae0",
+            "Value": {
+                "id": "c2a8072a-a7a2-4523-adbb-9ecfcd389f6c",
+                "resourcePath": "sprites\\omega_dash_shoot\\omega_dash_shoot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -154,7 +170,7 @@
             "Key": "2583d648-63c5-40a3-a830-be5e31e0b914",
             "Value": {
                 "id": "93a4446b-bfdb-4a4d-b57a-c764b7e81a46",
-                "resourcePath": "sprites\\omega_walk\\omega_walk.yy",
+                "resourcePath": "sprites\\omega_walk_shoot\\omega_walk_shoot.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -211,6 +227,14 @@
             "Value": {
                 "id": "037aeeb4-bb5a-4ae2-a19d-d67f20ac0e01",
                 "resourcePath": "sprites\\spr_slope_1_0\\spr_slope_1_0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "33b417f5-7696-418a-a511-79a7dc528464",
+            "Value": {
+                "id": "02e88ef5-ae0c-4666-b58f-c1b330ef3974",
+                "resourcePath": "sprites\\omega_air_shoot\\omega_air_shoot.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -300,6 +324,14 @@
                 "id": "ab984cf6-cb19-488d-84e1-e60cd9a5ba07",
                 "resourcePath": "views\\5a631351-bf0b-4cf2-9935-0a8416941251.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5c91286c-1114-48e5-9183-153dc47617c2",
+            "Value": {
+                "id": "06901658-3d98-4b25-a0fd-1d05be8d9f27",
+                "resourcePath": "sprites\\spr_shot_medium\\spr_shot_medium.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -427,6 +459,22 @@
             "Value": {
                 "id": "fc4197ea-56c4-4b49-9a2c-5a62e6195e00",
                 "resourcePath": "sprites\\omega_idle\\omega_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8041bcad-7731-4ad3-926f-f2ff0edb630b",
+            "Value": {
+                "id": "012232a0-af05-416d-9fbb-92cbfc2a9fc5",
+                "resourcePath": "objects\\shot_regular\\shot_regular.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "84e0300a-153e-46d2-aba6-ceed7339584f",
+            "Value": {
+                "id": "b49e208f-5f9f-4056-9150-2e2d05a824c0",
+                "resourcePath": "sprites\\spr_shot_large\\spr_shot_large.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -615,6 +663,14 @@
             }
         },
         {
+            "Key": "bac6e43a-f0a2-4d98-8fa0-4fa95de7e74f",
+            "Value": {
+                "id": "a4cd1c4a-4124-4268-81af-5bffeed126e9",
+                "resourcePath": "sprites\\omega_walk\\omega_walk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bbe2459f-c456-4064-9b7f-465a1b9c7b41",
             "Value": {
                 "id": "cd22c18b-d265-4d18-8e14-5b5089db0063",
@@ -628,6 +684,14 @@
                 "id": "8d5bb99e-9ad6-4b1f-b2a8-691c2495cbee",
                 "resourcePath": "sprites\\Debug\\Debug.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c15c30dd-bfc0-4c44-b0b0-2b091adcd726",
+            "Value": {
+                "id": "e99e9db5-0412-4847-a4fd-88816e08f9e5",
+                "resourcePath": "views\\c15c30dd-bfc0-4c44-b0b0-2b091adcd726.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -711,11 +775,27 @@
             }
         },
         {
+            "Key": "db9b317a-83cc-42ae-8d77-ff789dcb83a6",
+            "Value": {
+                "id": "9261fc85-7e89-4bbe-9b63-d50635abf2d9",
+                "resourcePath": "views\\db9b317a-83cc-42ae-8d77-ff789dcb83a6.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "de800ae4-97f7-4cf5-a995-a354df8e0c7a",
             "Value": {
                 "id": "98c80c3c-842e-4a30-99eb-ec296adb8241",
                 "resourcePath": "views\\de800ae4-97f7-4cf5-a995-a354df8e0c7a.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e061c64c-b18a-4f88-89eb-1acd3e0437e6",
+            "Value": {
+                "id": "ef09e0bd-e53f-4197-9cf5-f23ba6986814",
+                "resourcePath": "sprites\\omega_idle_shoot\\omega_idle_shoot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -775,6 +855,14 @@
             }
         },
         {
+            "Key": "e9a3d126-67aa-4027-9b6c-6c2aefe12698",
+            "Value": {
+                "id": "dbe2092e-6280-49a3-9977-3810bb3ab634",
+                "resourcePath": "objects\\shot_large\\shot_large.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ef5f6cb3-78f0-48f0-afcf-a994579383d5",
             "Value": {
                 "id": "6168db57-d3d7-4b95-ba51-63b5f8ef8523",
@@ -827,6 +915,14 @@
             "Value": {
                 "id": "046e5f59-ed1f-4184-a39e-086ef70fbe95",
                 "resourcePath": "sprites\\spr_slope_2_1\\spr_slope_2_1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f8fdc4b8-5bcf-4562-aa20-be9f520eb009",
+            "Value": {
+                "id": "b1248a74-a6d8-4a97-aad4-dc89f8bdc8cd",
+                "resourcePath": "sprites\\spr_shot_regular\\spr_shot_regular.yy",
                 "resourceType": "GMSprite"
             }
         },
