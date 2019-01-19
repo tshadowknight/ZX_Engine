@@ -41,3 +41,6 @@ is_dead = false;
 death_particles_created = false;
 death_anim_counter = 0;
 death_anim_played = false;
+
+hitbox = -1;
+hurtbox = -1;
