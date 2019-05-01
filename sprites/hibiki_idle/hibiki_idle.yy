@@ -2,7 +2,7 @@
     "id": "1f70bf48-8c3c-49ba-adfa-6b96bf7f7943",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "Idle",
+    "name": "hibiki_idle",
     "For3D": false,
     "HTile": false,
     "VTile": false,

@@ -44,6 +44,56 @@ if(is_dead){
 /// @description Falling State Handler
 // You can write your code in this editor
 
+current_animation_set = regular_animations;
+
+switch(state){
+	case("ladder"):
+		sprite_index = current_animation_set[? "idle"];
+		shooting_anim_last_context = "idle";
+	break;
+	case("stand"):
+		var target_moving_sprite = current_animation_set[? "walk"];
+		shooting_anim_last_context = "walk";
+		if(dashing_counter > 0){
+			target_moving_sprite = current_animation_set[? "dash"];
+			shooting_anim_last_context = "dash";
+		}
+		if(key_left != 0){		
+			sprite_index = target_moving_sprite;							
+			image_xscale = base_scale * -1
+		} else if(key_right != 0){			
+			sprite_index = target_moving_sprite;						
+			image_xscale = base_scale * 1;
+		} else {
+			sprite_index = current_animation_set[? "idle"];
+			shooting_anim_last_context = "idle";
+		}		
+	break;
+	case("jump"):		
+		shooting_anim_last_context = "air";
+		
+		if(facing == -1){
+			sprite_index = current_animation_set[? "jump"];	
+			image_xscale = base_scale * -1;
+		} else {
+			sprite_index = current_animation_set[? "jump"];	
+			image_xscale = base_scale * 1;
+		}		
+	
+	break;	
+	case("fall"):		
+		shooting_anim_last_context = "air";		
+		if(facing == -1){
+			sprite_index = current_animation_set[? "fall"];	
+			image_xscale = base_scale * -1;
+		} else {
+			sprite_index = current_animation_set[? "fall"];	
+			image_xscale = base_scale * 1;
+		}		
+	break;
+}
+
+
 if(state != "jump" && state != "upper_cut"){
 	if(force_h_align){
 		var displacement = 0;

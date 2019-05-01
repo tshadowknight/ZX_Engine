@@ -159,10 +159,18 @@
             }
         },
         {
+            "Key": "1eb1ffd7-5a41-4380-9ecb-f120bf765d01",
+            "Value": {
+                "id": "ac819d73-9aab-4566-b75c-8fbdb5b2fe04",
+                "resourcePath": "sprites\\hibiki_dash\\hibiki_dash.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1f70bf48-8c3c-49ba-adfa-6b96bf7f7943",
             "Value": {
                 "id": "fc878e0e-f8f7-4362-b0a2-e673adc9cc55",
-                "resourcePath": "sprites\\Idle\\Idle.yy",
+                "resourcePath": "sprites\\hibiki_idle\\hibiki_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -292,6 +300,14 @@
                 "id": "4a205e0b-e793-48c9-a9c2-c57dd8d62e5a",
                 "resourcePath": "views\\367f5e95-ccc2-4a74-9b62-795458bc4ff5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "377c81c4-0207-486f-8af6-188193fe95b0",
+            "Value": {
+                "id": "0c071a7c-5359-4327-b028-ef5ef993c288",
+                "resourcePath": "sprites\\hibiki_walk\\hibiki_walk.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -735,6 +751,14 @@
             }
         },
         {
+            "Key": "b5ac6d51-0b9b-4e4b-8f12-1d42bdda54f8",
+            "Value": {
+                "id": "bd3c7f2c-e22f-48eb-b6d4-3e2a2deeb55e",
+                "resourcePath": "sprites\\hibiki_fall\\hibiki_fall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b5b3f90d-5a4e-4261-a215-02acc90371e6",
             "Value": {
                 "id": "04c1e843-7b1b-477b-81ec-5537d5376f40",
@@ -1028,6 +1052,14 @@
                 "id": "55a06aea-7aba-48fc-9c5d-34e3a02903d1",
                 "resourcePath": "views\\f531def9-ccd7-449d-8aa7-6af5577deff7.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f558e93a-a650-4767-8995-2faeb74ed160",
+            "Value": {
+                "id": "3f1f9cf7-92e3-4ae9-ad45-0c51a5835483",
+                "resourcePath": "sprites\\hibiki_jump\\hibiki_jump.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
